@@ -40,7 +40,7 @@ const routes: Routes = [
   },
   // aggiungo la rotta per il ChatComponent
   {
-    path: "chat/prova",
+    path: "chat",
     component: ChatComponent,
     // con la property outlet definiamo il nome del router-outlet secondario dove vogliamo che venga renderizzato il componente
     outlet: "chat",

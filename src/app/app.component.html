@@ -41,11 +41,14 @@
     <!-- la direttiva routerLink acceta un array con i path variables e come ultimo argomento di questo un oggetto di configurazione -->
     <!-- passiamo un array contenente solo l'oggetto di configurazione e andiamo a settare la proprietà outlets che è un altro oggetto, con il nome del secondary outlet come proprietà e come valore un array con le stringhe dei path variables di cui è composta la rotta che vogliamo renderizzare in quel secondary outlet -->
     <!-- in questo caso il path della rotta è chat e basta -->
+    <!-- si può avere più di un router-outklet secondario aperto contemporaneamente -->
+    <!-- per chiudere l'oulet secondario bisogna agire sull'url, questo perchè quando viene aperto si modifica l'url della rotta del router primario,  ad esempio http://localhost:4200/courses(chat:chat/prova)(nomeAltro:rottaAltro)-->
+    <!-- bisogna navigare verso un altro componente e settare null il router-secondario -->
     <a
       mat-button
       class="menu-item"
       *ngIf="auth.isLoggedIn$ | async"
-      [routerLink]="[{ outlets: { chat: ['chat', 'prova'] } }]"
+      [routerLink]="[{ outlets: { chat: ['chat'] } }]"
     >
       <mat-icon>help</mat-icon>
     </a>

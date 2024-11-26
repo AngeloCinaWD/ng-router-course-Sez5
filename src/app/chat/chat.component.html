@@ -1,15 +1,15 @@
 <div class="chat-container mat-elevation-z7">
-
   <h2>How can we help you?</h2>
 
   <textarea placeholder="Type Your Message Here"></textarea>
 
   <div class="buttons-container">
-
     <button mat-raised-button color="primary">Send Message</button>
 
-    <button mat-raised-button>Close Chat</button>
-
+    <!-- per chiudere il router-outlet secondario utilizziamo la direttiva [routerLink] e gli passiamo sempre l'oggetto di configurazione -->
+    <!-- dobbiamo passare anche un link che ci permetta di navigare verso il router primario, utilizziamo '/' per tornare alla rotta padre -->
+    <button mat-raised-button [routerLink]="['/', { outlets: { chat: null } }]">
+      Close Chat
+    </button>
   </div>
-
 </div>
