@@ -36,7 +36,17 @@
     </div>
 
     <!-- posso iscrivermi agli obeservables del service auth.store tramite pipe async -->
-    <a mat-button class="menu-item" *ngIf="auth.isLoggedIn$ | async">
+    <!-- voglio fare in modo che al click di questo help venga renderizzato un component in un router-outlet secondario -->
+    <!-- utilizziamo il router-link, ma non in modo solito, infatti passando un link e basta stiamo dicendo al routerlink che deve navigare verso il primary router-outlet -->
+    <!-- la direttiva routerLink acceta un array con i path variables e come ultimo argomento di questo un oggetto di configurazione -->
+    <!-- passiamo un array contenente solo l'oggetto di configurazione e andiamo a settare la proprietà outlets che è un altro oggetto, con il nome del secondary outlet come proprietà e come valore un array con le stringhe dei path variables di cui è composta la rotta che vogliamo renderizzare in quel secondary outlet -->
+    <!-- in questo caso il path della rotta è chat e basta -->
+    <a
+      mat-button
+      class="menu-item"
+      *ngIf="auth.isLoggedIn$ | async"
+      [routerLink]="[{ outlets: { chat: ['chat', 'prova'] } }]"
+    >
       <mat-icon>help</mat-icon>
     </a>
 
@@ -61,5 +71,9 @@
 
   <loading [detectRoutingOnGoing]="true"></loading>
 
+  <!-- il router-outlet senza nome è quello primario, per tutti i componenti -->
   <router-outlet></router-outlet>
 </mat-sidenav-container>
+
+<!-- creo il router-outlet secondario e gli dò un name, lo chiamo chat -->
+<router-outlet name="chat"></router-outlet>
