@@ -60,6 +60,10 @@ const routes: Routes = [
       enableTracing: false,
       // viene messo l'hash (il cancelletto) che determina per il server quale è la root dell'app per l'index.html, quando è true
       useHash: false,
+      // se torno alla pagina che ho lasciato mi riporta dove avevo scrollato
+      scrollPositionRestoration: "enabled",
+      // paramsInheritanceStrategy settata 'always' mi permette di ritrovare nella rotta chil fra i suoi Path Variables anche quelli del parent, non ho quindi bisogno di fare ad esempio route.parent.paramMap.get("courseUrl") ma mi basta fare route.paramMap.get("courseUrl") ad esempio nei resolver
+      paramsInheritanceStrategy: "always",
     }),
   ],
   exports: [RouterModule],
