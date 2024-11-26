@@ -1,11 +1,15 @@
 <mat-sidenav-container fullscreen>
   <mat-toolbar color="primary">
     <div class="toolbar-tools">
+      <!-- la direttva routerLinkActive applica la classe css se è attiva la route /courses sia se è attiva una sua rotta figlia -->
+      <!-- possiamo modifcare questo comportamento andando a dire che la rotta deve matchare completamente, utilizzando la direttiva [routerLinkActiveOptions] e passandogli un oggetto di configurazione per determinare il comportamento di routerLinkActive -->
+      <!-- fra le proprietà c'è exact che accetta un booleano, true il css sarà applicato solo alla rotta che matcha con quella riportata nel routerLink -->
       <a
         class="menu-item"
         mat-button
         routerLink="/courses"
         routerLinkActive="menu-item-active"
+        [routerLinkActiveOptions]="{ exact: true }"
       >
         <span>Courses</span>
       </a>
