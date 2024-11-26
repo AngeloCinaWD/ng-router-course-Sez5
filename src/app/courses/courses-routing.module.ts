@@ -16,6 +16,7 @@ const routes: Routes = [
   {
     path: "",
     component: HomeComponent,
+    data: { ruolo: "ruolo" },
   },
   // questa rotta si potrà accedere solo se si è loggati
   {
