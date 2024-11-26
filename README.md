@@ -45,3 +45,5 @@ The application is visible at port 4200: [http://localhost:4200](http://localhos
 ![router-events-type](/router_event_type.png)
 
 ![href="javascript:void(0)"](</javascript_void(0).png>)
+
+## [Map objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/Map)

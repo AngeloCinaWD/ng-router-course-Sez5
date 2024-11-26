@@ -9,6 +9,8 @@
     <p>{{ course.longDescription }}</p>
   </mat-card-content>
 
+  <!-- per aggiungere path variables alla rotta lo posso fare tramite la direttiva routerLink passando un array di stringhe, una stringa per ogni path variable, ad esempio [routerLink]="['ciao', 'bello']" ottengo partendo dalla rotta padre http://localhost:4200/rottaPadre/ciao/bello -->
+  <!-- per aggiungere Query Parameters utilizzo la direttiva [queryParams]="{ couponCode: 'NEW_YEAR' }" passandogli un oggetto con coppie key-value per i parametri che voglio aggiungere, ottengo http://localhost:4200/rottaPadre/ciao/bello?couponCode=NEW_YEAR-->
   <mat-card-actions class="course-actions">
     <button
       mat-raised-button
