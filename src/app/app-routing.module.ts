@@ -55,6 +55,11 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       preloadingStrategy: CustomPreloadingStrategy,
+      // altre opzioni di configurazione del RouterModule
+      // enableTracing, booleano, utile per il debug, mostra informazioni in console sulle rotte durante la navigazione
+      enableTracing: false,
+      // viene messo l'hash (il cancelletto) che determina per il server quale è la root dell'app per l'index.html, quando è true
+      useHash: false,
     }),
   ],
   exports: [RouterModule],
